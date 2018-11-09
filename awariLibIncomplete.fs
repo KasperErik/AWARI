@@ -86,10 +86,7 @@ let printGameOver b (p1: string) (p2: string) (i1: int) (i2: int) =
         i2 i1 p2 p1
 
 let isHome (p : player) (i : int) =
-    match p with
-    | _ when p = Player1 && i = 6   -> true
-    | _ when p = Player2 && i = 13  -> true
-    | _                             -> false
+    if p = Player1 && i = 6 || p = Player2 && i = 13 then true else false
 
 let isGameOver  (b : board) =
     match b with
@@ -134,14 +131,9 @@ let distribute (b:board) (p:player) (i:int) =
     let mutable h = a.[i]
     a.[i] <- 0
     for j = 1 to h do
-        match i with
-        |_ when i+j > 13  -> a.[(i+j)%14] <- a.[(i+j)%14] + 1
-                             printBoard (Array.toList a)
-                             System.Threading.Thread.Sleep (500)
-        |_                -> a.[i+j] <- a.[i+j] + 1
-                             printBoard (Array.toList a)
-                             System.Threading.Thread.Sleep (500)
-
+        a.[(i+j)%14] <- a.[(i+j)%14] + 1
+        printBoard (Array.toList a)
+        System.Threading.Thread.Sleep (500)
     h <- (i + h)%14
     if h <> 6 && h <> 13 && a.[h] = 1 && a.[12-h] <> 0 then
         match p with
