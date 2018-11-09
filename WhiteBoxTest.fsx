@@ -46,14 +46,60 @@ printfn "isGameOver Test
 
 //--------------getMove----------------------
 
+let rec getMove (b : board) p q =
+    printf "%s" q
+    let i = System.Console.ReadLine()
+    match p with
+    | Player1 ->
+        match System.Int32.TryParse(i) with
+        | (true,x) when x < 7 && x > 0 ->
+              match x with
+              |_ when b.[x-1] = 0 ->
+                    let s = sprintf "    %A you can not pick an empty pit: " p
+                    (getMove b p s)
+              |_ -> x - 1
+        |_      ->  let s = sprintf "    %A you dum dum, it has to be 1-6: " p
+                    (getMove b p s)
+    | Player2 ->
+        match System.Int32.TryParse(i) with
+        | (true,x) when x < 7 && x > 0 ->
+              match x with
+              |_ when b.[x+6] = 0 ->
+                    let s = sprintf "    %A you can not pick an empty pit: " p
+                    (getMove b p s)
+              |_ -> x + 6
+        |_      ->  let s = sprintf "    %A you dum dum, it has to be 1-6: " p
+                    (getMove b p s)
 
+printfn "getMove"
 
 //--------------distribute-------------------
 
+let distribute (b:board) (p:player) (i:int) =
+    let a = List.toArray b
+    let mutable h = a.[i]
+    a.[i] <- 0
+    for j = 1 to h do
+        a.[(i+j)%14] <- a.[(i+j)%14] + 1
+        //printBoard (Array.toList a)
+        //System.Threading.Thread.Sleep (500)
+    h <- (i + h)%14
+    if h <> 6 && h <> 13 && a.[h] = 1 && a.[12-h] <> 0 then
+        match p with
+        | Player1 ->  a.[6] <- a.[6] + a.[12-h] + 1
+        | Player2 ->  a.[13] <- a.[13] + a.[12-h] + 1
+        a.[12-h] <- 0
+        a.[h] <- 0
+    else a.[h] <- a.[h]
+    let B = Array.toList a
+    (B, h)
 
+printfn "distribute"
 
 //--------------turn-------------------------
 
-
+//Jeg ved ikke om vi skal teste dem her
 
 //--------------play-------------------------
+
+//Jeg ved ikke om vi skal teste dem her 
