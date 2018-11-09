@@ -2,7 +2,7 @@
 
 printfn "WhiteBox Test"
 
-let printBoard (b : board) : unit =
+let printBoard (b : int list) : unit =
   System.Console.Clear()
   let num x =
     match x with
@@ -52,6 +52,4 @@ let printBoard (b : board) : unit =
     (num b.[0]).[1] (num b.[1]).[1] (num b.[2]).[1] (num b.[3]).[1] (num b.[4]).[1] (num b.[5]).[1]
     (num b.[0]).[2] (num b.[1]).[2] (num b.[2]).[2] (num b.[3]).[2] (num b.[4]).[2] (num b.[5]).[2]
 
-printfn "printBoard
-empty list 
-"
+printfn "%A" (printBoard [])
