@@ -1,6 +1,6 @@
 CONTENTS OF THIS FILE
 ---------------------
-   
+
  * Introduction
  * Requirements
  * Compile
@@ -31,12 +31,12 @@ COMPILE
 How to compile the program:
 
  *Linux:
-    1.$ fsharpc --nologo -a <Filename>.fsi <Filename>.fs 
-    2.$ fsharpc --nologo -r <Filename>.dll <Filename>.fsx 
- 
+    1.$ fsharpc --nologo -a <Filename>.fsi <Filename>.fs
+    2.$ fsharpc --nologo -r <Filename>.dll <Filename>.fsx
+
  *Windows 10:
-    1.> fsharpc --nologo -a <Filename>.fsi <Filename>.fs 
-    2.> fsharpc --nologo -r <Filename>.dll <Filename>.fsx 
+    1.> fsharpc --nologo -a <Filename>.fsi <Filename>.fs
+    2.> fsharpc --nologo -r <Filename>.dll <Filename>.fsx
 
 RUN PROGRAM
 -----------
@@ -57,9 +57,9 @@ FAQ
 
 Q: What is Awari?
 
-A: Oware is an abstract 2-player strategy game among the Mancala family of board games 
-   (pit and pebble ... A common name in English is Awari but one of the earliest Western scholars to study the game, 
-   Robert Sutherland Rattray, used the name Wari. The game is about winning, 
+A: Oware is an abstract 2-player strategy game among the Mancala family of board games
+   (pit and pebble ... A common name in English is Awari but one of the earliest Western scholars to study the game,
+   Robert Sutherland Rattray, used the name Wari. The game is about winning,
    you win by getting more beans in your home pit than your opponent gets in is.
 
 Q: Is this the best Awari game ever made?
@@ -80,7 +80,7 @@ Current maintainers:
  * Christian Franck - https://absalon.ku.dk/courses/28623/users/280667
 
 This project has been sponsored by:
- * No one at the moment- If interested in being sponsor for our project, or potential future projects; contact Frederik Berthelsen 
+ * No one at the moment- If interested in being sponsor for our project, or potential future projects; contact Frederik Berthelsen
 
 ########################################################
 ########################################################
@@ -94,9 +94,3 @@ This project has been sponsored by:
 ###         ###         ###         ####     ###########
 ########################################################
 ########################################################
-
-
-###         ###         ###         ###     ############
-########################################################
-########################################################
-
