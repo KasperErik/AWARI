@@ -31,10 +31,20 @@ COMPILE
 How to compile the program:
 
  *Linux:
+ Open terminal
+    1.$ Ctrl-Alt-T
+ Place yourself in the folder that contains the .fsi, .fs and .fsx files.
+    1.$ cd <Filepath>
+ Compile the files
     1.$ fsharpc --nologo -a awariLibIncomplete.fsi awariLibIncomplete.fs
     2.$ fsharpc --nologo -r awariLibIncomplete.dll AWARI.fsx
 
  *Windows 10:
+  Open terminal
+    1.> Win + R keys on your keyboard. Then, type cmd or cmd.exe and press Enter or click/tap OK
+ Place yourself in the folder that contains the .fsi, .fs and .fsx files.
+    1.> cd <Filepath>
+ Compile the files
     1.> fsharpc --nologo -a awariLibIncomplete.fsi awariLibIncomplete.fs
     2.> fsharpc --nologo -r awariLibIncomplete.dll AWARI.fsx
 
@@ -42,8 +52,8 @@ RUN PROGRAM
 -----------
 
 Starting the program:
- *Linux: $ mono <Filename>.exe
- *Win 10: > mono <Filename>.exe
+ *Linux: $ mono AWARI.exe
+ *Win 10: > mono AWARI.exe
 
 When the program is running the following userinteractions are available:
 On keyboard: 1 to 6 (selects pit in which to start on the current players side)
