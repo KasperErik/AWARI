@@ -31,12 +31,12 @@ COMPILE
 How to compile the program:
 
  *Linux:
-    1.$ fsharpc --nologo -a <Filename>.fsi <Filename>.fs
-    2.$ fsharpc --nologo -r <Filename>.dll <Filename>.fsx
+    1.$ fsharpc --nologo -a awariLibIncomplete.fsi awariLibIncomplete.fs
+    2.$ fsharpc --nologo -r awariLibIncomplete.dll AWARI.fsx
 
  *Windows 10:
-    1.> fsharpc --nologo -a <Filename>.fsi <Filename>.fs
-    2.> fsharpc --nologo -r <Filename>.dll <Filename>.fsx
+    1.> fsharpc --nologo -a awariLibIncomplete.fsi awariLibIncomplete.fs
+    2.> fsharpc --nologo -r awariLibIncomplete.dll AWARI.fsx
 
 RUN PROGRAM
 -----------
