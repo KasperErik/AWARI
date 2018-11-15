@@ -48,7 +48,7 @@ printfn "isGameOver Test
 
 let rec getMove (b : board) p (i : string list) =
     printf "" //printf "%s" q
-    //let i = System.Console.ReadLine()
+    //let i = System.Console.ReadLine(), string list givet som alternativt input
     match p with
     | Player1 ->
         match System.Int32.TryParse(i.Head) with
@@ -98,7 +98,19 @@ let distribute (b:board) (p:player) (i:int) =
     let B = Array.toList a
     (B, h)
 
-printfn "distribute"
+printfn "distribute
+%b
+%b
+%b
+%b
+%b
+%b"
+  (distribute [3;3;3;3;3;3;0;3;3;3;3;3;3;0] Player1 3 = ([3;3;3;0;4;4;1;3;3;3;3;3;3;0], 6))
+  (distribute [3;3;3;3;3;3;0;3;0;3;3;3;3;0] Player1 5 = ([3;3;3;3;0;0;5;4;0;3;3;3;3;0], 8))
+  (distribute [3;3;3;3;3;3;0;3;3;3;3;3;3;0] Player1 0 = ([0;4;4;4;3;3;0;3;3;3;3;3;3;0], 3))
+  (distribute [3;3;3;3;3;3;0;3;3;3;3;3;3;0] Player2 10 = ([3;3;3;3;3;3;0;3;3;3;0;4;4;1], 13))
+  (distribute [3;0;3;3;3;3;0;3;3;3;3;3;3;0] Player2 12 = ([4;0;3;3;3;3;0;3;3;3;3;0;0;5], 1))
+  (distribute [3;3;3;3;3;3;0;3;3;3;3;3;3;0] Player2 7 = ([3;3;3;3;3;3;0;0;4;4;4;3;3;0], 10))
 
 //--------------turn-------------------------
 
