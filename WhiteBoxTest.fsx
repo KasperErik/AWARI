@@ -17,7 +17,7 @@ printfn "isHome Test
   (isHome Player1 6 = true)
   (isHome Player1 8 = false)
   (isHome Player2 13 = true)
-  (isHome Player2 8 = false)
+  (isHome Player2 6 = false)
 
 //--------------isGameOver-------------------
 
@@ -46,32 +46,36 @@ printfn "isGameOver Test
 
 //--------------getMove----------------------
 
-let rec getMove (b : board) p q =
-    printf "%s" q
-    let i = System.Console.ReadLine()
+let rec getMove (b : board) p (i : string list) =
+    printf "" //printf "%s" q
+    //let i = System.Console.ReadLine()
     match p with
     | Player1 ->
-        match System.Int32.TryParse(i) with
+        match System.Int32.TryParse(i.Head) with
         | (true,x) when x < 7 && x > 0 ->
               match x with
               |_ when b.[x-1] = 0 ->
-                    let s = sprintf "    %A you can not pick an empty pit: " p
-                    (getMove b p s)
+                    //let s = sprintf "    %A you can not pick an empty pit: " p
+                    (getMove b p i.Tail)
               |_ -> x - 1
-        |_      ->  let s = sprintf "    %A you dum dum, it has to be 1-6: " p
-                    (getMove b p s)
+        |_      ->  //let s = sprintf "    %A you dum dum, it has to be 1-6: " p
+                    (getMove b p i.Tail)
     | Player2 ->
-        match System.Int32.TryParse(i) with
+        match System.Int32.TryParse(i.Head) with
         | (true,x) when x < 7 && x > 0 ->
               match x with
               |_ when b.[x+6] = 0 ->
-                    let s = sprintf "    %A you can not pick an empty pit: " p
-                    (getMove b p s)
+                    //let s = sprintf "    %A you can not pick an empty pit: " p
+                    (getMove b p i.Tail)
               |_ -> x + 6
-        |_      ->  let s = sprintf "    %A you dum dum, it has to be 1-6: " p
-                    (getMove b p s)
+        |_      ->  //let s = sprintf "    %A you dum dum, it has to be 1-6: " p
+                    (getMove b p i.Tail)
 
-printfn "getMove"
+printfn "getMove
+%b
+%b"
+  (getMove [0;3;0;3;0;3; 0 ;3;0;3;0;3;0; 3] Player1 ["H";"7";"3";"4"] = 3)
+  (getMove [0;3;0;3;0;3; 0 ;3;0;3;0;3;0; 3] Player2 ["J";"0";"4";"3"] = 9)
 
 //--------------distribute-------------------
 
@@ -102,4 +106,4 @@ printfn "distribute"
 
 //--------------play-------------------------
 
-//Jeg ved ikke om vi skal teste dem her 
+//Jeg ved ikke om vi skal teste dem her
