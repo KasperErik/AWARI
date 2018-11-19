@@ -87,6 +87,7 @@ let printGameOver b (p1: string) (p2: string) (i1: int) (i2: int) =
 
 let isHome (p : player) (i : int) =
     if p = Player1 && i = 6 || p = Player2 && i = 13 then true else false
+    erjh ejk
 
 let isGameOver  (b : board) =
     match b with
